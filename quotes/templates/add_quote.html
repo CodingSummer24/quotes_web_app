@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Quote{% endblock %}
+
+{% block content %}
+    <h1>Add New Quote</h1>
+
+    <form method="post" action="/add/quote">
+
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="quoteField" class="form-label">Quote</label>
+            <textarea class="form-control" id="quoteField" name="quoteText" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="authorField" class="form-label">Author</label>
+            <select class="form-select" id="authorField" name="authorId" aria-label="Default select example">
+                {% for author in authors %}
+                    <option value="{{ author.id }}">{{ author.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+
+    </form>
+
+{% endblock %}

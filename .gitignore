@@ -1,6 +1,7 @@
 # Created by https://www.gitignore.io
 
 venv
+quotes.db
 
 ### OSX ###
 .DS_Store

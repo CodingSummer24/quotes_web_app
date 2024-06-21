@@ -23,4 +23,5 @@ urlpatterns = [
     path('', posts.views.home),
     path('authors', posts.views.authors),
     path('quotes', posts.views.quotes),
+    path('add/quote', posts.views.add_quote),
 ]
